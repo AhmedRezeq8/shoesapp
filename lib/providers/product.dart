@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class Product {
+class Product with ChangeNotifier {
   final String id;
   final String title;
   final String brand;
@@ -19,6 +19,13 @@ class Product {
     @required this.imageUrl,
     @required this.bgColor,
 
-    this.isFavorite,
+    this.isFavorite =false,
   });
+
+ 
+
+ void isfav() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }
